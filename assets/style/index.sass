@@ -1,0 +1,148 @@
+$color-blue: #488AEA
+$color-blue2: #116aef
+$color-gray: #E5E5E5
+
+*
+    box-sizing: border-box
+html, body
+    padding: 0
+    margin: 0
+    font-family: "Montserrat", sans-serif
+    font-optical-sizing: auto
+    font-weight: 500
+    font-size: 17px
+    font-style: normal
+
+.header
+    margin: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 20px 10px
+    border-bottom: 1px solid #ddd
+    max-width: 1200px
+    margin: 0 auto
+    &_btn
+        cursor: pointer
+        position: fixed
+        display: none
+        width: 100%
+        text-align: right
+        padding-right: 50px
+        &::after
+            position: absolute
+            color: black
+        &:not(.is-open)::after
+            content: "☰"
+            font-weight: 900
+            font-size: 1.5em
+            padding-top: 5px
+        &.is-open::after
+            content: "×"
+            font-size: 2.5em
+    &_left
+        img
+            width: 100px
+    &_right
+        nav
+            display: flex
+            gap: 30px
+            a
+                text-decoration: none
+                color: $color-blue
+                &:hover
+                    color: $color-blue2
+                    background-clip: text
+
+@media screen and (max-width: 420px)
+    .header
+        flex-direction: column
+        gap: 30px
+        height: 100vh
+        padding: 10px !important
+        position: fixed
+        width: 100%
+        top: 0
+        z-index: 999999
+        background-color: white
+        &_btn
+            display: block
+        &_left
+            padding-top: 5px
+            img
+                width: 100px
+        &_right
+            height: 100%
+            display: flex
+            align-items: center
+            nav
+                align-items: center
+                justify-content: center
+                flex-direction: column
+        &:not(.is-open)
+            height: 70px !important
+            overflow: hidden
+            .header
+                &_right
+                    display: none
+
+.block_1
+    display: flex
+    justify-content: center
+    margin-top: 100px
+    padding: 10px
+    &__title
+        text-align: center
+        h1
+            font-size: 24px
+
+.block_2
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-top: 20px
+    padding: 10px
+    margin-bottom: 50px
+    &__test
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+        gap: 10px
+        &_title
+            padding: 20px
+            max-width: 1300px
+            width: 100%
+            background: #f1f1f1
+            border-radius: 10px
+            a
+                text-decoration: none
+                color: $color-blue
+                &:hover
+                    color: $color-blue2
+        nav
+            display: flex
+            flex-direction: column
+            gap: 10px
+            a
+                text-decoration: none
+                color: $color-blue
+                padding: 20px
+                border-radius: 10px
+                background-color: #f5f4f5
+                &:hover
+                    color: $color-blue2
+        .label_test
+            width: 100%
+            margin: 0 20px
+        .block_2__test_item
+            outline: 1px solid gray
+            max-width: 1300px
+            width: 100%
+            display: flex
+            gap: 10px
+            align-items: center
+            margin: 0 auto
+            padding: 10px
+            border-radius: 10px
+            cursor: pointer
